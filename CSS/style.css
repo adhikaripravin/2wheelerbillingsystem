@@ -1,0 +1,212 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    width: 80%;
+}
+.logo{
+    margin:0;
+}
+.logo img{
+    display: inline-block;
+    height: 80px;  
+}
+nav{
+    background-color:red;
+}
+nav a{
+    padding:15px 20px;
+    display: inline-block;
+    color:#ebf0f8;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+nav a:hover, .active{
+    background-color:#ebf0f8 ;
+    color: #260745;   
+}
+#banner{
+    position: relative;
+}
+#banner img{
+    width: 100%;
+    display: block;
+}
+.info{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: white;
+    padding: 20px;
+    opacity: 0.5;
+}
+.info h2{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-style: italic;
+}
+.info p{
+    color: black;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style: italic;
+}
+#content h3{
+    font-size: 30px;
+    color: #260745;
+    padding: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+.boxes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 30px;
+}
+.box{
+    padding: 10px;
+    flex: 33.3%;
+    background-color: skyblue;
+}
+.box img{
+    width: 100%;
+}
+.box h4 a{
+    color: black;
+    font-size: 24px;
+    padding: 5px 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+    margin: 10px 0;
+}
+.box h4 a:hover{
+    color: #260745;
+}
+.read_more{
+    background-color: black;
+    color: white;
+    padding: 15px 10px;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    margin: 10px 0;
+}
+.read_more:hover{
+    background-color: #260745    ;
+}
+
+footer{
+    background-color: black;
+    padding: 30px 0;
+}
+
+.footer_boxes{
+    display: flex;
+    width: 100%;
+}
+.footer_box{
+    width: 33.3%;
+}
+
+.footer_box h5{
+    color: #ebf0f8;
+    font-size: 24px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 10px 0;
+}
+.footer_box p{
+    color: #ebf0f8;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.foot_menu {
+    padding-left: 20px;
+    font-size: 18px;
+}
+.foot_menu a{
+    color:#ebf0f8 ;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: block;
+    padding: 10px 0;
+}
+.foot_menu a:hover{
+    text-decoration: none;
+}
+
+/* for about Us */
+
+#about{
+    margin: 20px 0;
+}
+
+#about h2{
+    color: black;
+    font-size: 34px;
+    padding: 5px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-decoration: none;
+    margin: 10px 0;
+}
+
+.content_boxes{
+    display: flex;
+    width: 100%;
+}
+.content_box {
+    width: 50%;
+}
+.content_boxes img{
+    width: 100%;
+    padding-right: 10px;
+}
+.content_box p{
+    color: #260745;
+    font-size: 18px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-decoration: none;
+}
+/* for contact form */
+.contact_form{
+    margin: 30px 0;
+}
+.contact_form h2{
+    color: black;
+    font-size: 34px;
+    padding: 5px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-decoration: none;
+    margin: 10px 0;
+}
+.contact_form label{
+    display: block;
+    color: red;
+    font-size: 18px;
+    padding: 5px 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.contact_form input,.contact_form textarea{
+    padding: 10px;
+    width: 100%;
+    border-color: #7f719a;
+}
+.contact_form input[type=submit]{
+    background-color: green;
+    color: white;
+    border: none;
+}
+.contact_form input[type=submit]:hover{
+    background-color: #7f719a;
+    cursor: pointer;
+}
+
