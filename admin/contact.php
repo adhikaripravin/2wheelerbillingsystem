@@ -1,13 +1,17 @@
+<?
+$nameErr = $phoneErr = $bikemodelErr = $partsErr = $messageErr = "";
+$name = $phone = $bikemodel =$parts =$messageErr = "";
+?>
 <?php
 if(isset($_GET['error'])){
     if($_GET['error'] == 1){
-        echo "<script>alert('Empty Email');</script>";
+        echo "<script>alert('Empty Field');</script>";
     }
     elseif($_GET['error'] == 2){
       echo "<script>alert('Your Query has been send. Respective memeber will contact you within 10 minutes..');</script>";
     }
     else{
-        echo "<script>alert('Your Email has been Send');</script>";
+        echo "<script>alert('Your Query has been Send');</script>";
     }
 }
 require "../connection/connection.php";
@@ -181,12 +185,6 @@ if(!empty($_SESSION['adminloginid'])){
             <li><a href="index.php">Home</a></li>
             <li>
             <li><a href="parts.php">Parts</a></li>
-                <!-- <ul class="menu-item">
-                    <li><a href="yamaha.html">Yamaha</a></li>
-                    <li><a href="honda.html">Honda</a></li>
-                    <li><a href="beneli.html">Beneli</a></li>
-                    <li><a href="ducati.html">Ducati</a></li>
-                </ul> -->
             </li>
             <!-- <li><a href="parts.php">Parts</a></li> -->
             <li><a href="about.php">About us</a></li>
@@ -217,13 +215,19 @@ if(!empty($_SESSION['adminloginid'])){
       </div>
       <div class="right-side">
         <div class="topic-text">Which Bike Parts you are looking for ?</div>
-        <p>If you have any work from me or any types of quries related to any bike parts, you can send me message from here. It's my pleasure to help you.</p>
-      <form action="../auth/backendenquiry.php" method="POST">
+        <p>If you have any work from me or any types of queries related to any bike parts, you can send me message from here. It's my pleasure to help you.</p>
+
+        <div id="error_message"></div>
+      <form onsubmit="return validation()" action="../auth/backendenquiry.php" method="POST">
         <div class="input-box">
             <input type="text" name="name" id="name" placeholder="Enter your name" required>
+            
         </div>
         <div class="input-box">
         <input type="text" name="phone" id="phone" placeholder="Enter your Phone Number" required>
+        </div>
+        <div class="input-box">
+        <input type="text" name="email" id="email" placeholder="Enter your Email" required>
         </div>
         <div class="input-box message-box">
         <input type="text" name="bike_model" id="bike_model" placeholder="Enter Parts of Bike Model" required>
@@ -238,16 +242,20 @@ if(!empty($_SESSION['adminloginid'])){
         <input type="submit" value="Send" name="send" id="send">
         </div>
       </form>
+
+      <script src="script.js"></script>
+
     </div>
     </div>
   </div>
+ 
    <!-- Footer--------------------------------------------------- -->
    <footer>
         <div class="contenttt">
           <div class="top">
             <div class="logo-details">
               <img src="Uploadimage/logo.png"  alt="" srcset="" style="width: 5em;height: 5em;">
-              <!-- <span class="logo_name">Bhatbhatey Kinum</span> -->
+              
             </div>
             <div class="media-icons">
               <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
@@ -265,34 +273,21 @@ if(!empty($_SESSION['adminloginid'])){
               <li><a href="about.php">About us</a></li>
               <li><a href="contact.php">Contact us</a></li>
             </ul>
-            <!-- <ul class="boxes">
-              <li class="link_name">Services</li>
-              <li><a href="#">Bike Resale</a></li>
-              <li><a href="#">Recondition</a></li>
-              <li><a href="#">Service Center</a></li>
-              <li><a href="#">Bike modify</a></li>
-            </ul> -->
+            
             <img src="https://i.gifer.com/3AfW.gif" style="width:20em; height:12em;margin-top:-3em;">
             
             <ul class="box input-box">
-              
-              <li class="link_name">Subscribe</li>
-              <form action="../auth/backendsubscriber.php" method="POST">
-              <li><input type="text" name="email" placeholder="Enter your email" required></li>
-              <div class="button">
-              <li><input type="submit" value="Subscribe" name="subscribe"></li>
-              </div>
-              </form>
-            </ul>
-          </div>
+            <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+900000000000</div><br>
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">2wheeler6532@gmail.com</div>
+          <div class="text-two">info.2wheler@gmail.com</div>
         </div>
-        <div class="bottom-details">
-          <div class="bottom_text">
-            <span class="copyright_text">Copyright © 2021 <a href="#">2 wheelers.</a>All rights reserved</span>
-            <span class="policy_terms">
-              <a href="#">Privacy policy</a>
-              <a href="#">| Terms & condition</a>
-            </span>
+
+            </ul>
           </div>
         </div>
       </footer>   

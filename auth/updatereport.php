@@ -1,7 +1,7 @@
 <?php
 require "../connection/connection.php";
 $id = $_GET['id'];
-$query = "SELECT * FROM enquiry WHERE id = '$id'";
+$query = "SELECT * FROM report WHERE id = '$id'";
 $result=mysqli_query($con,$query);
 $row=mysqli_fetch_assoc($result);
 ?>
@@ -51,13 +51,13 @@ $row=mysqli_fetch_assoc($result);
     </aside>
 
     <div class="content1">
-    <h1> Update Customer Enquiry </h1>
+    <h1> Update Customer Bill Report </h1>
     </div>
     <?php
     require "../connection/connection.php";
     ?>
     <div class="container">
-  <form action="../auth/updateenquiry1.php" method="POST">
+  <form action="../auth/updatereport1.php" method="POST">
   <div class="row">
       <div class="col-25">
       </div>
@@ -68,37 +68,37 @@ $row=mysqli_fetch_assoc($result);
       <div class="col-25">
       </div>
       <div class="col-75">
-        <input type="text" value="<?php echo $row['name']?>" name="name">
+        <input type="text" value="<?php echo $row['parts_name']?>" name="parts_name">
       </div>
       <div class="row">
       <div class="col-25">
       </div>
       <div class="col-75">
-        <input type="text" value="<?php echo $row['phone']?>" name="phone">
+        <input type="text" value="<?php echo $row['c_name']?>" name="c_name">
       </div>
       <div class="row">
       <div class="col-25">
       </div>
       <div class="col-75">
-        <input type="text" value="<?php echo $row['email']?>" name="email">
+        <input type="text" value="<?php echo $row['c_phone']?>" name="c_phone">
       </div>
       <div class="row">
       <div class="col-25">
       </div>
       <div class="col-75">
-        <input type="text" value="<?php echo $row['bike_model']?>" name="bike_model">
+        <input type="text" value="<?php echo $row['qty']?>" name="qty">
       </div>
       <div class="row">
       <div class="col-25">
       </div>
       <div class="col-75">
-        <input type="text" value="<?php echo $row['parts']?>" name="parts">
+        <input type="text" value="<?php echo $row['price']?>" name="price">
       </div>
       <div class="row">
       <div class="col-25">
       </div>
       <div class="col-75">
-        <input type="text" value="<?php echo $row['message']?>" name="message">
+        <input type="text" value="<?php echo $row['total']?>" name="total">
       </div>
     <div class="row">
       <button type="submit" value="Update" name="update" id="update">Update</button>

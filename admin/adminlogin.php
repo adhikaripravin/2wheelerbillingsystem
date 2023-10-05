@@ -107,7 +107,7 @@ div.login-form form button:hover{
         <h2>Admin Login</h2>
         <form method="POST" action="">
             <div class="input-field">
-                <input type="text" placeholder="username" name="adminname">
+                <input type="text" placeholder="userid" name="adminname">
             </div>
             <div class="input-field">
                 <input type="password" placeholder="password" name="adminpassword">
@@ -120,7 +120,9 @@ div.login-form form button:hover{
 
     if(isset($_POST['login']))
     {
-        $query="SELECT * from `admin_login` WHERE `admin_name`='$_POST[adminname]' AND `admin_password`='$_POST[adminpassword]'";
+        
+        $adminpassword = md5($_POST['adminpassword']);
+        $query="SELECT * from `admin` WHERE `userid`='$_POST[adminname]' AND `password`='$adminpassword'";
         $result=mysqli_query($con,$query);
         if(mysqli_num_rows($result)==1)
         {
@@ -131,7 +133,7 @@ div.login-form form button:hover{
         }
         else
         {
-            echo "<script>alert('Invalid Username or Password');</script>";
+            echo "<script>alert('Invalid Userid or Password');</script>";
         }
     }
 

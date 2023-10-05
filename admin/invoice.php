@@ -1,16 +1,6 @@
 <?php 
    require "../connection/connection.php";
-
-if(isset($_GET['error'])){
-    if($_GET['error'] == 1){
-        echo "<script>alert('Not Saved');</script>";
-    }
-    else{
-        echo "<script>alert('Invoice Bill Saves');</script>";
-    }
-}
-
-   ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,6 +41,18 @@ if(isset($_GET['error'])){
         <a href="../admin/adminlogin.php" class="btn btn-primary" onclick = 'return Logout()' ><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
             <!-- <a href="../admin/adminlogin.php" onclick = 'return Logout()'>Logout</a> -->
          </div>
+         <span id="errorblock" style="color:red; padding:350px;">
+      <?php
+    if(isset($_GET['error'])){
+    if($_GET['error'] == 1){
+        echo "Not Saved";
+    }
+    else{
+        echo "Invoice Bill saved";
+    }
+}
+?>
+      </span>
     <!--</header> -->
       <section class="mt-3">
          <div class="container-fluid">
@@ -98,7 +100,7 @@ if(isset($_GET['error'])){
                           <input type="number" name="qty" id="qty" min="0" value="0" class="form-control">
                         </td>
                         <td>
-                           <p name="product_price" id="product_price"></p>
+                           <p name="p_price" id="p_price"></p>
                         </td>
                         <td><button id="add" name="add" class="btn btn-primary">Add</button></td>
                         
@@ -118,6 +120,7 @@ if(isset($_GET['error'])){
                      <!-- <div class="btn">
       <button type="submit" value="Save" name="save" id="save">Save</button>
     </div> -->
+    <form action="../auth/addbill.php" method="post">
                <div class="p-4 print-container">
                   <div class="text-center">
                      <h4>Two Wheeler Billing System (TWBS)</h4>
@@ -131,10 +134,10 @@ if(isset($_GET['error'])){
                         <p></p>
                      </div>
                   </div>
-                  <form>
-                     <input type="text" placeholder="Enter Customer Name">
-                     <input type="text" placeholder="Enter Customer Phone No">
-                                 </form>
+                  
+                     <input type="text" placeholder="Enter Customer Name" name="c_name" >
+                     <input type="text" placeholder="Enter Customer Phone No" name="c_phone">
+                                 
                   <div class="row">
                      </span>
                      <table id="receipt_bill" class="table">
@@ -142,9 +145,9 @@ if(isset($_GET['error'])){
                            <tr>
                               <th> No.</th>
                               <!-- <form action="../admin/fetch_product.php" id="invoiceForm" method="POST"> -->
-                              <th name="p_name" id="p_name">Parts Name</th>
+                              <th name="pname" id="p_name">Parts Name</th>
                               <th name="qty" id="qty">Quantity</th>
-                              <th name="product_price" id="product_price">Price</th>
+                              <th name="price" id="product_price">Price</th>
                               <th name="totalAmount" id="total">Total</th>
                                <div class="text-right">
                               <!-- <div class="text-right">
@@ -185,10 +188,12 @@ if(isset($_GET['error'])){
                                  
                   </div>
                </div>
+               <input type="submit" value="submit" name="submit">
+               </form>
             </div>
          </div>
       </section>
-                                 
+              
    </body>
 </html>
 <script>
@@ -202,7 +207,7 @@ if(isset($_GET['error'])){
           dataType:'json',
           success:function(data)
             {
-               $('#product_price').text(data.product_price);
+               $('#p_price').text(data.p_price);
 
  
                //$('#qty').text(data.product_qty);
@@ -217,7 +222,7 @@ if(isset($_GET['error'])){
        
         var name = $('#parts').val();
         var qty = $('#qty').val();
-        var price = $('#product_price').text();
+        var price = $('#p_price').text();
  
         if(qty == 0)
         {
@@ -238,9 +243,9 @@ if(isset($_GET['error'])){
           var subTotal = 0;
           subTotal += parseInt(total);
           
-          var table =   '<tr><td>'+ count +'</td><td>'+ name + '</td><td>' + qty + '</td><td>' + price + '</td><td><strong><input type="hidden" id="total" value="'+total+'">' +total+ '</strong></td></tr>';
+          var table =   '<tr><td><input type="text" name="id" value="'+ count +'" ></td><td><input type="text" name="parts_name" value="'+ name + '"></td><td><input type="text" name="qty" value="' + qty + '" ></td><td><input type="text" name="price" value="' + price + '" ></td><td><strong><input type="hidden" id="total" name="total" value="'+total+'">' +total+ '</strong></td></tr>';
           $('#new').append(table)
- 
+  
            // Code for Sub Total of parts 
             var total = 0;
             $('tbody tr td:last-child').each(function() {
@@ -306,68 +311,6 @@ if(isset($_GET['error'])){
         setTimeout(displayClock, 1000); 
      }
 </script>
-
-
-<?php
-   //      require "../connection/connection.php";
-   //      if(isset($_POST['save'])){
-   //       $id = $_POST['id'];
-   //       $pname = $_POST['parts_name'];
-   //       $qty = $_POST['qty'];
-   //       $price = $_POST['price'];
-   //       $total = $_POST['total'];
-     
-   //       // $query = "UPDATE product SET qty='$qty'- quantity='$qqty' WHERE id='$pid'";
-   //       $query = "INSERT INTO `report` (`id`, `parts_name`, `qty`, `price`, `total`) VALUES ('$id','$pname','$qty','$price','$total')";
-   //       $result=mysqli_query($con,$query);
-   //       if ($result){
-   //           header("location:../admin/invoice.php?error=2");
-   //       }
-   //       else{
-   //           header("location:../admin/invoice.php?error=1");
-   //       }
-   //   }
-   //   else
-   //   {
-   //       die ('error');
-   //   }
-        //$date=date("Y-m-d");
-      //   $query="SELECT * FROM report";
-      //   $result=mysqli_query($con,$query);
-      //   while($row=mysqli_fetch_assoc($result)){
-      //   echo "<tr>";
-      //   echo "<td>".$row['id']."</td>";
-      //   echo "<td>".$row['parts_name']."</td>";
-      //   echo "<td>".$row['qty']."</td>";
-      //   echo "<td>".$row['price']."</td>";
-      //   echo "<td>".$row['total']."</td>";
-      //   echo "<td><a href='../auth/deletecategory.php?id=".$row['id']."'><input type='submit' value='Delete' class='delete'></a></td>";
-      //   echo "<td><a href='../auth/updatecategory.php?id=".$row['id']."'><input type='submit' value='Update' class='update'></a></td>";
-      //   echo "</tr>";
-         // }
-        ?>
-
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script>
-  $(document).ready(function() {
-    $("#invoiceForm").submit(function(e) {
-      e.preventDefault();
-      const formData = $(this).serialize();
-      $.ajax({
-        type: "POST",
-        url: "../auth/backendinvoice.php",
-        data: formData,
-        success: function(response) {
-          alert("Invoice saved successfully!");
-        },
-        error: function(xhr, status, error) {
-          alert("An error occurred while saving the invoice.");
-          console.log(xhr.responseText);
-        }
-      });
-    });
-  });
-</script> -->
 
 <script>
 function Logout() {

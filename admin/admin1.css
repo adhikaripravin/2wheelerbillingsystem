@@ -111,6 +111,10 @@ ul li a:hover{
     display: inline-block;
     height: 80px;  
 }
+#errorblock{
+  margin-left: 400px;
+  color:red;
+}
 
 
 /* Style inputs, select elements and textareas */

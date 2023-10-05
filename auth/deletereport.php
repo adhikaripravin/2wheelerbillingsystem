@@ -1,12 +1,12 @@
 <?php
     require "../connection/connection.php";
     
-    if(isset($_GET['num'])){
-        $num = $_GET['num'];
-        $query = "DELETE FROM subscriber WHERE num = '$num'";
+    if(isset($_GET['id'])){
+        $id = $_GET['id'];
+        $query = "DELETE FROM report WHERE id = '$id'";
         $result = mysqli_query($con,$query);
         if ($result){
-            header("location:../admin/subscriber.php?error=1");
+            header("location:../admin/adminreport.php?error=none");
         }
     }
     else

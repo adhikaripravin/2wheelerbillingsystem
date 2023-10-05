@@ -140,6 +140,10 @@ footer{
 .foot_menu a:hover{
     text-decoration: none;
 }
+#errorblock{
+    margin-left: 400px;
+    color:red;
+  }
 
 /* for about Us */
 

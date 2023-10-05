@@ -81,16 +81,11 @@ if(!isset($_SESSION['adminloginid']))
             <li><a href="index.php">Home</a></li>
             <li>
             <li><a href="parts.php">Parts</a></li>
-                <!-- <ul class="menu-item">
-                    <li><a href="yamaha.html">Yamaha</a></li>
-                    <li><a href="honda.html">Honda</a></li>
-                    <li><a href="beneli.html">Beneli</a></li>
-                    <li><a href="ducati.html">Ducati</a></li>
-                </ul> -->
+                
             </li>
             <li><a href="about.php">About us</a></li>
             <li><a href="contact.php">contact us</a></li>
-            <!-- <li><a href="exterior.php">Exterior Parts</a></li> -->
+            
         </ul>
     </nav>
     <?php
@@ -103,49 +98,49 @@ if(!isset($_SESSION['adminloginid']))
         <img src="Uploadimage/ct1.jpg" alt="" srcset="">
                     <h4>
                         <a href=""> Crossfire RM Tank </a><br>
-                        <a href=""> Rs. 6100/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/ct2.jpg" alt="" srcset="">
                     <h4>
                         <a href="">Crossfire CX Tank</a><br>
-                        <a href=""> Rs. 4500/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/y1.jpg" alt="" srcset="">
                     <h4>
                         <a href="">Yamaha Fzs 250 Back Mud Guard</a><br>
-                        <a href=""> Rs. 1600/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/e9.jpg" alt="" srcset="">
                     <h4>
                         <a href="">KTM 390 Engine</a><br>
-                        <a href=""> Rs. 67000/-</a>
+                        <a href=""></a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/e8.jpg" alt="" srcset="">
                     <h4>
                         <a href="">R15 Throttle Wire</a><br>
-                        <a href=""> Rs. 2000/-</a>
+                        <a href=""></a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/e6.jpg" alt="" srcset="">
                     <h4>
                         <a href="">R15 Clutch Plate</a><br>
-                        <a href=""> Rs. 5500/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/e5.webp" alt="" srcset="">
                     <h4>
                         <a href="">Yamaha V2 clutch Plate</a><br>
-                        <a href=""> Rs. 4000/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
@@ -153,21 +148,21 @@ if(!isset($_SESSION['adminloginid']))
                     <h4>
 
                         <a href="">Crossfire CX Shock</a><br>
-                        <a href=""> Rs. 13600/-</a>
+                        <a href=""></a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/e3.jpg" alt="" srcset="">
                     <h4>
                         <a href="">KTM 290 Suspension</a><br>
-                        <a href=""> Rs. 8300/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/e2.jpg" alt="" srcset="">
                     <h4>
                         <a href=""> Honda Spark Plug</a><br>
-                        <a href=""> Rs. 1000/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
@@ -175,60 +170,48 @@ if(!isset($_SESSION['adminloginid']))
                     <h4>
 
                         <a href="">Honda Shine CP Tank</a><br>
-                        <a href=""> Rs. 2500/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
           <img src="Uploadimage/e1.webp" alt="" srcset="">
                     <h4>
                         <a href=""> Splendor Piston</a><br>
-                        <a href=""> Rs. 7000/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/p1.jpg" alt="" srcset="">
                     <h4>
                         <a href="">Pulsar 220 clutch Brake</a><br>
-                        <a href=""> Rs. 1300/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/k1.jpg" alt="" srcset="">
                     <h4>
                         <a href="">KTM 390 Back Guard</a><br>
-                        <a href=""> Rs. 4900/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/h2.webp" alt="" srcset="">
                     <h4>
                         <a href="">Honda Shine SP Tank</a><br>
-                        <a href=""> Rs. 2550/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
         <div class="shop-link">
         <img src="Uploadimage/t1.webp" alt="" srcset="">
                     <h4>
                         <a href="">Yamaha Fz v2 front</a><br>
-                        <a href=""> Rs. 1500/-</a>
+                        <a href=""> </a>
                     </h4>
         </div>
       </div>
     </section>
-    <?php
-        // require "../connection/connection.php";
-        // //$date=date("Y-m-d");
-        // $query="SELECT * FROM product";
-        // $result=mysqli_query($con,$query);
-        // while($row=mysqli_fetch_assoc($result)){
-        // echo "
-        // <td>$row[p_name]</td><br>
-        // <td>$row[product_price]</td>
-        // <td><img src='$row[Pimage]' height= '300px' width= '200px'></td>
-        // </tr>
-        // ";
-        //     }
-        ?>
+
+        
 
 
     <!-- Footer--------------------------------------------------- -->
@@ -237,7 +220,7 @@ if(!isset($_SESSION['adminloginid']))
           <div class="top">
             <div class="logo-details">
               <img src="Uploadimage/logo.png"  alt="" srcset="" style="width: 5em;height: 5em;">
-              <!-- <span class="logo_name">Bhatbhatey Kinum</span> -->
+              
             </div>
             <div class="media-icons">
               <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
@@ -255,33 +238,20 @@ if(!isset($_SESSION['adminloginid']))
               <li><a href="about.php">About us</a></li>
               <li><a href="contact.php">Contact us</a></li>
             </ul>
-            <!-- <ul class="boxes">
-              <li class="link_name">Services</li>
-              <li><a href="#">Bike Resale</a></li>
-              <li><a href="#">Recondition</a></li>
-              <li><a href="#">Service Center</a></li>
-              <li><a href="#">Bike modify</a></li>
-            </ul> -->
+            
             <img src="https://i.gifer.com/3AfW.gif" style="width:20em; height:12em;margin-top:-3em;">
             <ul class="box input-box">
               
-              <li class="link_name">Subscribe</li>
-              <form action="../auth/backendsubscriber.php" method="POST">
-              <li><input type="text" name="email" placeholder="Enter your email" required></li>
-              <div class="button">
-              <li><input type="submit" value="Subscribe" name="subscribe"></li>
-              </div>
-              </form>
-            </ul>
-          </div>
+            <div class="phone details">
+          <i class="fas fa-phone-alt"></i>
+          <div class="topic">Phone</div>
+          <div class="text-one">+900000000000</div><br>
+          <i class="fas fa-envelope"></i>
+          <div class="topic">Email</div>
+          <div class="text-one">2wheeler6532@gmail.com</div>
+          <div class="text-two">info.2wheler@gmail.com</div>
         </div>
-        <div class="bottom-details">
-          <div class="bottom_text">
-            <span class="copyright_text">Copyright © 2021 <a href="#">2 wheelers.</a>All rights reserved</span>
-            <span class="policy_terms">
-              <a href="#">Privacy policy</a>
-              <a href="#">| Terms & condition</a>
-            </span>
+            </ul>
           </div>
         </div>
       </footer> 

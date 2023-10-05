@@ -4,12 +4,13 @@ if(isset($_POST['update'])){
     $id = $_POST['id'];
     $name = $_POST['name'];
     $phone = $_POST['phone'];
+    $email = $_POST['email'];
     $bike_model = $_POST['bike_model'];
     $parts = $_POST['parts'];
     $message = $_POST['message'];
     
-    if(!empty($id) && !empty($name) && !empty($phone) && !empty($bike_model) && !empty($parts) && !empty($message)){
-    $query = "UPDATE enquiry SET name = '$name', phone = '$phone', bike_model = '$bike_model', parts = '$parts', message = '$message' WHERE id = '$id'";
+    if(!empty($id) && !empty($name) && !empty($phone) && !empty($email) && !empty($bike_model) && !empty($parts) && !empty($message)){
+    $query = "UPDATE enquiry SET name = '$name', phone = '$phone', email = '$email',bike_model = '$bike_model', parts = '$parts', message = '$message' WHERE id = '$id'";
     $result=mysqli_query($con,$query);
     if ($result){
         header("location:../admin/adminenquiry.php?error=2");
